@@ -1,10 +1,17 @@
 var circle = document.getElementById("circle");
 var loading = document.getElementById("loading");
+var content = document.getElementById("content")
+var text = document.getElementById("text");
 
 var red = 0;
 var green = 0;
 var blue = 0;
 var angle = 0;
+
+var width = content.offsetWidth;
+var height = content.offsetHeight;
+content.style.marginTop = "-"+(height/2)+"px";
+content.style.marginLeft = "-"+(width/2)+"px";
 
 setInterval(() => {
     angle += 1;  
@@ -20,4 +27,5 @@ setInterval(() => {
     circle.style.borderTopColor = "rgb("+red+","+green+","+blue+")";
     circle.style.transform = "rotate("+angle+"deg)";
     loading.style.color = "rgb("+red+","+green+","+blue+")";
+    text.style.color = "rgb("+red+","+green+","+blue+")";
 }, 10);
